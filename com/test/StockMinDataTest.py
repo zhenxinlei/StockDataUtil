@@ -22,7 +22,7 @@ for  highPrice in high:
     #         )
     x.append(highPrice[0])
     y.append(highPrice[1])
-plt.plot(x,y)
+plt.plot(x,y,label="high price")
 
 #plot low high price
 y=[]
@@ -35,14 +35,14 @@ for  highPrice in low:
     #         )
     x.append(highPrice[0])
     y.append(highPrice[1])
-plt.plot(x,y)
+plt.plot(x,y,label="low price")
 
 #plot avg price
 y=[]
 for  i in range(0,len(high)):
     avg=(high[i][1]+low[i][1])/2
     y.append(avg)
-plt.plot(x,y)
+plt.plot(x,y,'y', label="avg price")
 
 
 # add closed price to plot
@@ -57,8 +57,8 @@ stockData=stockData[i:]
 y=[]
 for  highPrice in stockData:
     y.append(highPrice[1][0])
-plt.plot(x,y)
+plt.plot(x,y,'r', label="close price")
 
-
+plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
 plt.show()
 
