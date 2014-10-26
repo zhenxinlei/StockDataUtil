@@ -50,15 +50,12 @@ class StockMinData:
         low=dict()
         startTime=self.timeStamp[0]
 
-        #get first 5 min highest and lowest
+
         localMax=float(self.stockData[startTime][0])
         localMin=float(self.stockData[startTime][0])
         startDurationTime=0
 
         for i in self.timeStamp:
-            print(self.stockData[i])
-            print(self.stockData[i][0])
-            print(float(self.stockData[i][0]))
             if (i>(startTime+duration)):
                 startDurationTime=i
                 break
@@ -71,12 +68,12 @@ class StockMinData:
             high.update({endTimeStamp:localMax})
             low.update({endTimeStamp:localMin})
 
-        for i in self.timeStamp:
-            print(
-            datetime.datetime.fromtimestamp(
-                i
-                ).strftime('%Y-%m-%d %H:%M:%S')
-            )
+        # for i in self.timeStamp:
+        #     print(
+        #     datetime.datetime.fromtimestamp(
+        #         i
+        #         ).strftime('%Y-%m-%d %H:%M:%S')
+        #     )
         return (high,low)
 
     def findMaxAndMin(self,startTimeStamp,endTimeStamp):
@@ -94,6 +91,6 @@ class StockMinData:
         return (_localMax, _localMin)
 
 
-print(StockMinData('JPM','20141006-20141017').historicalHighAndLow(1500))
+#print(StockMinData('JPM','20141006-20141017').historicalHighAndLow(1500))
 
 
