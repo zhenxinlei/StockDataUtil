@@ -39,11 +39,19 @@ plt.plot(x,y,label="low price")
 
 #plot avg price
 y=[]
+fiboRet=[[],[],[]] #fibonacci 38.2%,50%, 61.8%
 for  i in range(0,len(high)):
     avg=(high[i][1]+low[i][1])/2
-    y.append(avg)
-plt.plot(x,y,'y', label="avg price")
-
+    fibo_382=(high[i][1]-low[i][1])*0.382+low[i][1]
+    fibo_618=(high[i][1]-low[i][1])*0.618+low[i][1]
+    fiboRet[0].append(fibo_382)
+    fiboRet[2].append(fibo_618)
+    fiboRet[1].append(avg)
+    #y.append(avg)
+#plt.plot(x,y,'y', label="avg price")
+plt.plot(x,fiboRet[0],label="Finbo-38.2%")
+plt.plot(x,fiboRet[1],label="Finbo-50%")
+plt.plot(x,fiboRet[2],label="Finbo-61.8%")
 
 # add closed price to plot
 stockData=smd.StockMinData('JPM','20141006-20141017').stockData
@@ -57,8 +65,9 @@ stockData=stockData[i:]
 y=[]
 for  highPrice in stockData:
     y.append(highPrice[1][0])
-plt.plot(x,y,'r', label="close price")
+plt.plot(x,y, label="close price")
 
 plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
+plt.title("JPM 20141006-20141017")
 plt.show()
 

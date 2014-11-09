@@ -82,12 +82,11 @@ class StockMinData:
 
         startIndex=self.timeStamp.index(startTimeStamp)
         endIndex=self.timeStamp.index(endTimeStamp)
-        for i in self.timeStamp[startIndex:endIndex]:
+        for i in self.timeStamp[startIndex:endIndex+1]:
             if (float(self.stockData[i][0])>=float(_localMax)):
                 _localMax=float(self.stockData[i][0])
             if (float(self.stockData[i][0])<=float(_localMin)):
                 _localMin=float(self.stockData[i][0])
-
         return (_localMax, _localMin)
 
 
