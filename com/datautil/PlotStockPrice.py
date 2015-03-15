@@ -11,7 +11,7 @@ class PlotStockPrice:
         stockData = dict()
 
     def plotStockPrice(self):
-        stockData= StockMinData.StockMinData().stockData
+        stockData= StockMinData.StockMinData('JPM','20141006-20141017').stockData
         print(stockData)
 
 PlotStockPrice().plotStockPrice()
