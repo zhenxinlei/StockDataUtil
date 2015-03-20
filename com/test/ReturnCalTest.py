@@ -85,7 +85,7 @@ symbol=sorted([
 ])
 
 
-print (symbol)
+
 stockprice = pdata.get_data_yahoo(symbol, "3/15/2014", "3/15/2015",3,0.001,True,True,25)
 #print(stockprice.Close.values)
 a=stockprice.Close.values[0][0]
@@ -104,4 +104,4 @@ eqLogRe=reCal.eqLogReImp(samplePriceMx)
 logReDateMx = pandas.DataFrame(eqLogRe, returndate, symbol)
 
 # can print stock symbol, but symbol has to be large enough 
-StockRankingEng.momRanking(logReDateMx, 20, 5, 1)
+StockRankingEng.momRanking(logReDateMx, 10, 5, 1)

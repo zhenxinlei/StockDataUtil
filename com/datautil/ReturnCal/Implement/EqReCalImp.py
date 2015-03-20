@@ -34,3 +34,4 @@ def eqLogReImp(priceMx):
     for i in range(r-1):
         reMx[i]=np.emath.log(priceMx[i+1]/priceMx[i])
     return  np.core.multiarray.array(reMx)
+

@@ -12,13 +12,13 @@ def rankReOverCvar(reMx, cvar ):
         ranking result of stocks( column index)
     '''
     a=np.mean(reMx,0)/cvar
-    print(a)
+    
     array = np.array(a[0])
     for i in range(len(array)):
-        print(i)
+       
 
         if np.isnan(array[i]):
-            print(i)
+            
             array[i]=-float("inf")
     order = array.argsort()
     ranks = order.argsort()
