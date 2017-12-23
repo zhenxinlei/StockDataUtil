@@ -153,4 +153,4 @@ logReDateMx = pandas.DataFrame(eqLogRe, returndate, stockprice.axes[2])
 print("log return data matirx")
 
 # can print stock symbol, but symbol has to be large enough 
-StockRankingEng.momRanking(logReDateMx, 120, 60, 2)
+StockRankingEng.momRanking(logReDateMx, 120, 60, 100)
