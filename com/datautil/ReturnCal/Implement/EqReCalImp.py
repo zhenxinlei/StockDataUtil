@@ -1,5 +1,5 @@
 __author__ = 'Zhenxin Lei'
-import pandas.io.data
+#import pandas.io.data
 import numpy as np
 
 

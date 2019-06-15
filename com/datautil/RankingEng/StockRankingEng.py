@@ -45,6 +45,8 @@ def momRanking(reData, rankPers, holdPers, topPercent):
     while i + rankPers - 1 <= r - 1:
         subperiod = eqRe[i:i + rankPers - 1, :]
         cVar = cVarCal.eqCVarCalImp(subperiod, alpha)
+        print('return ', subperiod)
+        print("c Var ",cVar)
         ranking = rankReOverCvar(subperiod, cVar)
         symbolindex = np.argsort(ranking)[::-1]
         
@@ -64,7 +66,8 @@ def momRanking(reData, rankPers, holdPers, topPercent):
 
     rankindex = [i + 1 for i in range(int(c * topPercent / 100))]
     recomStkData = pandas.DataFrame(symbol, date, rankindex)
-    print(recomStkData)
+    print("recom stock ", recomStkData)
+    #print(rankindex)
 
     return recomStkData
 

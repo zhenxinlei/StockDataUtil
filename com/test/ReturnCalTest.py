@@ -121,12 +121,22 @@ symbol = sorted([
        'UTX', 'UHS', 'UNM', 'URBN', 'VFC', 'VLO', 'VAR', 'VTR', 'VRSN', 'VZ', 'VRTX', 'VIAB', 'V', 'VNO', 'VMC', 'WMT', 'WBA', 'DIS', 'WM', 'WAT',
        'ANTM', 'WFC', 'WDC', 'WU', 'WY', 'WHR', 'WFM', 'WMB', 'WEC', 'WYN', 'WYNN', 'XEL', 'XRX', 'XLNX', 'XL', 'XYL', 'YHOO', 'YUM', 'ZBH', 'ZION', 'ZTS',
 
-        'TSLA','AMD', 'MU','NVDA',
+        'TSLA','AMD', 'MU','NVDA', 'SPY'
+                 ])
+
+symbol = sorted([
+   'ABT', 'ABBV', 'ACN', 'CB', 'ADBE', 'ADT', 'AAP', 'AES', 'AET', 'AFL', 'AMG', 'A', 'APD', 'ARG', 'AKAM',
+     'XEC', 'CINF', 'CTAS', 'CSCO', 'C', 'CTXS', 'CLX', 'CME', 'CMS', 'COH', 'KO', 'CCE', 'CTSH', 'CL', 'CMCSA',
+       'CMA', 'EFX', 'EQIX', 'EQR', 'ESS', 'EL', 'ES', 'EXC', 'EXPE', 'EXPD', 'ESRX', 'XOM', 'FFIV', 'FB', 'FAST', 'FDX', 'FIS', 'FITB',
+       'FSLR', 'FE', 'FLIR', 'FLS', 'FLR', 'FMC', 'FTI', 'F', 'FOSL', 'BEN', 'FCX', 'FTR', 'GME', 'GPS', 'GRMN', 'GD',
+       'GE', 'GGP', 'GIS', 'GM', 'GPC', 'GNW', 'GILD', 'GS', 'GT', 'GOOGL', 'GOOG', 'GWW', 'HAL', 'HBI', 'HOG', 'HAR', 'HRS',
+
+        'TSLA','AMD', 'MU','NVDA', 'SPY'
                  ])
 
 print(len(symbol))
 
-stockprice = pdata.get_data_yahoo(symbol, "2016-1-1", "2017-7-1")
+stockprice = pdata.get_data_yahoo(symbol, "2015-1-1", "2018-8-1")
 print(len(symbol))
 print(stockprice.shape)
 #print(stockprice)
